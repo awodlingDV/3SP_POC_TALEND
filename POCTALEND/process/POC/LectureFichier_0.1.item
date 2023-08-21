@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?><talendfile:ProcessType xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" xmlns:TalendMapper="http://www.talend.org/mapper" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" defaultContext="Default" jobType="Standard" xmi:version="2.0">
   <context confirmationNeeded="false" name="Default">
-    <contextParameter comment="" internalId="_2bsMMBnFEe6FPN0wn002oQ" name="repertoire_input" prompt="repertoire_input?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="C:\Users\awodling\Desktop\Missions\3SP Technologies\input\test"/>
-    <contextParameter comment="" internalId="_phRm8D7iEe6e8ZXubUMBaQ" name="repertoire_output_log" prompt="repertoire_output_log?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="C:\Users\awodling\Desktop\Missions\3SP Technologies\input\test\logs\test.csv"/>
-    <contextParameter comment="" internalId="_MtdW4D-eEe6_mbSdOAZkiw" name="repertoire_output_log_valeurs" prompt="repertoire_output_log_valeurs?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="C:\Users\awodling\Desktop\Missions\3SP Technologies\input\test\logs\test_valeurs.csv"/>
+    <contextParameter comment="" internalId="_2bsMMBnFEe6FPN0wn002oQ" name="repertoire_input" prompt="repertoire_input?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="D:\Jeu-de-testTalend\Test"/>
+    <contextParameter comment="" internalId="_phRm8D7iEe6e8ZXubUMBaQ" name="repertoire_output_log" prompt="repertoire_output_log?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="D:\Jeu-de-testTalend\Test\logs\test.csv"/>
+    <contextParameter comment="" internalId="_MtdW4D-eEe6_mbSdOAZkiw" name="repertoire_output_log_valeurs" prompt="repertoire_output_log_valeurs?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="D:\Jeu-de-testTalend\Test\logs\test_valeurs.csv"/>
   </context>
   <parameters>
     <elementParameter field="CLOSED_LIST" name="LOG4J_RUN_LEVEL" show="false" value="Trace"/>
@@ -1497,7 +1497,7 @@
       <uiProperties shellMaximized="true"/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="trimed" sizeState="INTERMEDIATE">
-        <mapperTableEntries expression="row10.line.substring(1, row10.line.length()-1) " name="line" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row10.line.substring(1, row10.line.length()-1).strip() " name="line" nullable="true" type="id_String"/>
       </outputTables>
       <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row10" sizeState="INTERMEDIATE">
         <mapperTableEntries name="line" nullable="true" type="id_String"/>
@@ -1540,7 +1540,7 @@
       <column key="false" length="255" name="valeur" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties shellMaximized="true"/>
+      <uiProperties/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="out2" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="Numeric.sequence(&quot;val_&quot;+(String)globalMap.get(&quot;temp_tableName&quot;),0,1)" name="numLigne" nullable="true" type="id_Integer"/>
@@ -1608,7 +1608,7 @@
     <elementParameter field="CHECK" name="DELETE_EMPTYFILE" value="false"/>
     <elementParameter field="CHECK" name="FILE_EXIST_EXCEPTION" show="false" value="false"/>
     <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" show="false" value="90"/>
-    <elementParameter field="TEXT" name="LABEL" value="fichierIntermediaireParam"/>
+    <elementParameter field="TEXT" name="LABEL" value="fichierIntermediaireValeurs"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tFileOutputDelimited_2">
       <column comment="" key="false" length="-1" name="numLigne" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Integer" usefulColumn="true"/>
@@ -1755,19 +1755,20 @@
       <column comment="" key="false" length="-1" name="CodeRoute" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="CodeOperation" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="CodeAction" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="Operateur" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="DateDebutMesure" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="DateFinMesure" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="Param_a_renommer" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="Param_a_renommer1" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="Param_a_renommer2" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="Param_a_renommer3" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="groupeParam" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="param" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="typeParam" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="Operateur" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="DateDebutMesure" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="DateFinMesure" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="non_utilise" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="numeroVT" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="Lot" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="Piece" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="nomFichier" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties/>
+      <uiProperties shellMaximized="true"/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="paramResult" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="Numeric.sequence((String)globalMap.get(&quot;temp_tableName&quot;)+&quot;_final&quot;,0,1) " name="nbLigne" nullable="true" type="id_Integer"/>
@@ -1780,16 +1781,17 @@
         <mapperTableEntries expression="row14.CodeRoute " name="CodeRoute" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row14.CodeOperation " name="CodeOperation" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row14.CodeAction " name="CodeAction" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row53.Operateur " name="Operateur" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row53.DateDebutMesure +&quot; &quot; +row53.HeureDebutMesure " name="DateDebutMesure" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row53.DateFinMesure +&quot; &quot; +row53.HeureFinMesure" name="DateFinMesure" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row53.Param_a_renommer " name="Param_a_renommer" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row53.Param_a_renommer1 " name="Param_a_renommer1" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row53.Param_a_renommer2 " name="Param_a_renommer2" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row53.Param_a_renommer3 " name="Param_a_renommer3" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row51.groupeParam " name="groupeParam" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row15.param" name="param" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row15.typeParam " name="typeParam" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row53.Operateur " name="Operateur" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row53.DateDebutMesure +&quot; &quot; +row53.HeureDebutMesure " name="DateDebutMesure" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row53.DateFinMesure +&quot; &quot; +row53.HeureFinMesure" name="DateFinMesure" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row53.Param_a_renommer " name="non_utilise" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row53.Param_a_renommer1 " name="numeroVT" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row53.Param_a_renommer2 " name="Lot" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row53.Param_a_renommer3 " name="Piece" nullable="true" type="id_String"/>
+        <mapperTableEntries name="nomFichier" nullable="true" type="id_String"/>
       </outputTables>
       <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row14" sizeState="INTERMEDIATE">
         <mapperTableEntries name="iteration" nullable="true" type="id_Integer"/>
@@ -1869,25 +1871,27 @@
       <elementValue elementRef="LENGTH" value="10"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="CodeAction"/>
       <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="groupeParam"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="param"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="typeParam"/>
+      <elementValue elementRef="LENGTH" value="10"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="Operateur"/>
       <elementValue elementRef="LENGTH" value="10"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="DateDebutMesure"/>
       <elementValue elementRef="LENGTH" value="10"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="DateFinMesure"/>
       <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="Param_a_renommer"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="non_utilise"/>
       <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="Param_a_renommer1"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="numeroVT"/>
       <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="Param_a_renommer2"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Lot"/>
       <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="Param_a_renommer3"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Piece"/>
       <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="groupeParam"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="param"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="typeParam"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="nomFichier"/>
       <elementValue elementRef="LENGTH" value="10"/>
     </elementParameter>
     <elementParameter field="CHECK" name="PRINT_CONTENT_WITH_LOG4J" value="true"/>
@@ -1905,16 +1909,17 @@
       <column comment="" key="false" length="-1" name="CodeRoute" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="CodeOperation" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="CodeAction" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="Operateur" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="DateDebutMesure" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="DateFinMesure" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="Param_a_renommer" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="Param_a_renommer1" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="Param_a_renommer2" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="Param_a_renommer3" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="groupeParam" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="param" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="typeParam" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="Operateur" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="DateDebutMesure" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="DateFinMesure" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="non_utilise" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="numeroVT" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="Lot" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="Piece" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="nomFichier" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
   <node componentName="tHashInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="480" posY="1408">
@@ -1993,16 +1998,17 @@
       <column comment="" key="false" length="-1" name="CodeRoute" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="CodeOperation" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="CodeAction" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="Operateur" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="DateDebutMesure" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="DateFinMesure" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="Param_a_renommer" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="Param_a_renommer1" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="Param_a_renommer2" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="Param_a_renommer3" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="groupeParam" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="param" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="typeParam" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="Operateur" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="DateDebutMesure" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="DateFinMesure" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="non_utilise" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="numeroVT" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="Lot" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="Piece" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="nomFichier" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
   <node componentName="tHashInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="224" posY="704">
@@ -2778,7 +2784,7 @@
       <elementValue elementRef="TRACE_COLUMN" value="HeureFinMesure"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
-      <elementValue elementRef="TRACE_COLUMN" value="Param_a_renommer3"/>
+      <elementValue elementRef="TRACE_COLUMN" value="Piece"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
       <elementValue elementRef="TRACE_COLUMN" value="Param_a_renommer1"/>
@@ -2800,6 +2806,18 @@
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
       <elementValue elementRef="TRACE_COLUMN" value="Param_a_renommer"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="Lot"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="nomFichier"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="numeroVT"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="non_utilise"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
     </elementParameter>
@@ -3104,13 +3122,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_3125261d-49b7-4cce-bba0-df6b9fe20c5d"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>Cw0NWGJeaFqDMtHfG/k3/8SQwWh+9Cy3BaxUDjY+A6v9TNN8Yci7OxJaH5oRiC1jPf7pZa2eJVo/&#13;
-HV9rO8VRYQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_3676dbba-b924-42f1-9f49-db4588d2e7eb"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>t3Bc0+nCOuijOkxQACteqoi5cYaRlvElTxCD/vCs36oCGZtCPTm0VxUSvpqfmmQTQYxan7x999YU&#13;
-FREdtI9Dtg==</DigestValue></Reference></SignedInfo><SignatureValue>RIGCpw0Oh1dgNlPJT/fzc/5qpPrjTIe6ufz95Nfw4/BZ52hocN/bjrtbY9uXO3k6kwO6kpI9Z1/o&#13;
-7/NjR95aluLXoAivwwKUjy8y7TRvPFARwix90cldFa+ZPyvvVFZrshzJsG9yZ+VpM8VbWZwbCKNE&#13;
-iWOMs4F9UCvsapiALhjWlolRyzibHAa5mCEZOqrBL/5FSIU0k2h094tmmZFeSOcmx/FK4G6CVNbI&#13;
-KOcaATQmVrgSn/iwJbSBQjkM1F2TLFQe8V6Z1JHfzzFBUeMUhR0XZijxNm8KsU38RJpYiHjtCi34&#13;
-Jam1Wadok4NZt+SqdFLu41JVT3uHR3wn1rekVg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_1c7083bd-293b-4f31-b172-25ba6e359886"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>A1OOaCebNYy1r7grsqcTwtLXor/asdWjzqJOgVLErBxenUnjGH1BEC/bBUKfaE6oCrpI9oW11D7b&#13;
+jly0a6EtWw==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_2f98c5c2-b62f-4d14-9b5b-f9c8af1457e0"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>zQPu3SEzkj4JNDFkAAqMXbdYv8Vg9wrslzu2uU013oJ0iuFqo9LS+nHjSORGEHGv3JCXEnMXk+Gd&#13;
+tVDHrvljTQ==</DigestValue></Reference></SignedInfo><SignatureValue>d0deeYKJBojvyEG8bBKhZ7WbL6N8lmK4aI9BrYzZonq7WiTuVu4q1r4QbQh80f32YJHqXkmckrkP&#13;
+VFAqBQZT62OfXU37SVtBQRbZsQOW0GRRMA8SowMuA41okLf9uIfkBLFkP9+NKSDL4s1nSkIhE7h2&#13;
+kJiU3PGkLZL9TNLbBRgSi2Cdlc8os2alfUUrDsK4PvdLArP5pamkEPHGlZSq4MVg4k65t9vbmdlU&#13;
+NX52CUPQY8RbxwBsIYfTgWY2znUAUzBDu4MfK6+F+kWO6oTNdKV+7jNF8dyYHDA72wRbUb9o2F3/&#13;
+Fic9TnF4F3PfirByIO/vo8qKlmdV6mJpEkGKVg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -3132,4 +3150,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_3676dbba-b924-42f1-9f49-db4588d2e7eb" Target="#_3125261d-49b7-4cce-bba0-df6b9fe20c5d"><Timestamp>2023-08-21 08:10:50</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_2f98c5c2-b62f-4d14-9b5b-f9c8af1457e0" Target="#_1c7083bd-293b-4f31-b172-25ba6e359886"><Timestamp>2023-08-21 09:55:01</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
